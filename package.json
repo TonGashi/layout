@@ -1,6 +1,6 @@
 {
   "name": "@vubular/layout",
-  "version": "0.0.31",
+  "version": "0.0.32",
   "description": "App Layout",
   "main": "src/index.js",
   "scripts": {

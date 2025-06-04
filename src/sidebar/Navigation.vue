@@ -15,7 +15,7 @@
 					</template>
 					<template v-else>
 						<li :class="{'is-active': active==item}" @mouseover="overSettings(item)" @mouseleave="leaveSettings">
-							<div @click="toggleActiveItem(item)">
+							<div @click="toggleActiveItem(item)" class="is-relative">
 								<router-link v-if="item.path" :to="item.path">
 									<i v-if="item.icon" :class="item.icon"></i>
 									<translate v-if="item.label && expanded">{{item.label}}</translate>
@@ -28,7 +28,7 @@
 									<i v-if="item.icon" :class="item.icon"></i>
 									<translate v-if="item.label && expanded">{{item.label}}</translate>
 								</a>
-								<span v-if="settingsActive==item && isOwner" @mouseover="settingsOver = true" @mouseleave="settingsOver = false" class="is-inline-block is-pulled-right notStyle" style="position: relative; z-index: 100;">
+								<span v-if="settingsActive==item && isOwner" @mouseover="settingsOver = true" @mouseleave="settingsOver = false" class="is-inline-block is-pulled-right notStyle" style="position: absolute; top: 0; right: 5px;">
 									<router-link :to="'/'+item.namespace+'/settings'" class="notStyle">
 										<i class="fas fa-cog has-text-grey-light notStyle visibility"></i>
 									</router-link>
